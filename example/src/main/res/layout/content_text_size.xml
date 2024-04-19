@@ -28,22 +28,22 @@
 
         <com.ncorti.slidetoact.SlideToActView
             style="@style/SlideToActView.Example"
-            app:text_size="12sp"
+            app:slidetoact_text_size="12sp"
             app:text="TextSize 12sp" />
 
         <com.ncorti.slidetoact.SlideToActView
             style="@style/SlideToActView.Example"
-            app:text_size="14sp"
+            app:slidetoact_text_size="14sp"
             app:text="TextSize 14sp" />
 
         <com.ncorti.slidetoact.SlideToActView
             style="@style/SlideToActView.Example"
-            app:text_size="16sp"
+            app:slidetoact_text_size="16sp"
             app:text="TextSize 16sp" />
 
         <com.ncorti.slidetoact.SlideToActView
             style="@style/SlideToActView.Example"
-            app:text_size="18sp"
+            app:slidetoact_text_size="18sp"
             app:text="TextSize 18sp" />
 
         <com.ncorti.slidetoact.SlideToActView

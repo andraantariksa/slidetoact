@@ -380,7 +380,7 @@ class SlideToActView
                     typeFace = getInt(R.styleable.SlideToActView_text_style, 0)
                     mTextSize =
                         getDimensionPixelSize(
-                            R.styleable.SlideToActView_text_size,
+                            R.styleable.SlideToActView_slidetoact_text_size,
                             resources.getDimensionPixelSize(R.dimen.slidetoact_default_text_size),
                         )
                     textColor = actualTextColor
