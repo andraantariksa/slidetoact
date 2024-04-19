@@ -326,7 +326,7 @@ class SlideToActView @JvmOverloads constructor(
                 text = getString(R.styleable.SlideToActView_text) ?: ""
                 typeFace = getInt(R.styleable.SlideToActView_text_style, 0)
                 mTextSize = getDimensionPixelSize(
-                    R.styleable.SlideToActView_text_size,
+                    R.styleable.SlideToActView_slidetoact_text_size,
                     resources.getDimensionPixelSize(R.dimen.slidetoact_default_text_size)
                 )
                 textColor = actualTextColor
@@ -442,9 +442,8 @@ class SlideToActView @JvmOverloads constructor(
         mPosition = 0
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (canvas == null) return
 
         // Outer area
         mOuterRect.set(
@@ -687,16 +686,16 @@ class SlideToActView @JvmOverloads constructor(
         animSet.duration = animDuration
 
         animSet.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(p0: Animator?) {
+            override fun onAnimationStart(p0: Animator) {
                 onSlideToActAnimationEventListener?.onSlideCompleteAnimationStarted(
                     this@SlideToActView, mPositionPerc
                 )
             }
 
-            override fun onAnimationCancel(p0: Animator?) {
+            override fun onAnimationCancel(p0: Animator) {
             }
 
-            override fun onAnimationEnd(p0: Animator?) {
+            override fun onAnimationEnd(p0: Animator) {
                 mIsCompleted = true
                 onSlideToActAnimationEventListener?.onSlideCompleteAnimationEnded(
                     this@SlideToActView
@@ -704,7 +703,7 @@ class SlideToActView @JvmOverloads constructor(
                 onSlideCompleteListener?.onSlideComplete(this@SlideToActView)
             }
 
-            override fun onAnimationRepeat(p0: Animator?) {
+            override fun onAnimationRepeat(p0: Animator) {
             }
         })
         animSet.start()
@@ -800,16 +799,16 @@ class SlideToActView @JvmOverloads constructor(
         animSet.duration = animDuration
 
         animSet.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(p0: Animator?) {
+            override fun onAnimationStart(p0: Animator) {
                 onSlideToActAnimationEventListener?.onSlideResetAnimationStarted(
                     this@SlideToActView
                 )
             }
 
-            override fun onAnimationCancel(p0: Animator?) {
+            override fun onAnimationCancel(p0: Animator) {
             }
 
-            override fun onAnimationEnd(p0: Animator?) {
+            override fun onAnimationEnd(p0: Animator) {
                 isEnabled = true
                 stopIconAnimation(mDrawableTick)
                 onSlideToActAnimationEventListener?.onSlideResetAnimationEnded(
@@ -818,7 +817,7 @@ class SlideToActView @JvmOverloads constructor(
                 onSlideResetListener?.onSlideReset(this@SlideToActView)
             }
 
-            override fun onAnimationRepeat(p0: Animator?) {
+            override fun onAnimationRepeat(p0: Animator) {
             }
         })
         animSet.start()
