@@ -87,15 +87,15 @@ ktlint {
     }
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.andraantariksa'
-            artifactId = 'slidetoact'
-            version = "0.9.0"
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.andraantariksa'
+                artifactId = 'slidetoact'
+                version = '0.9.0'
+            }
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }
